@@ -20,7 +20,9 @@ class CreateData extends React.Component {
           />
           {console.log(this.state.date)}
         </div>
+        <div className="data">
         <p>{this.state.date.toString()}</p>
+        </div>
         <button>Next</button>
       </div>
     );

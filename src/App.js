@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import { Link, Switch } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 
 import "./App.css";
 import logo from "./logo.png";
 // import MainPage from "./components/MainPage/MainPage";
 // import Details from "./components/Details/Details";
 // import CreateDate from "./components/CreateDate/CreateData";
-// import Ongoing from "./components/Ongoing/Ongoing";
-// import CreateData from "./components/CreateDate/CreateData";
+import Ongoing from "./components/Ongoing/Ongoing";
+import CreateData from "./components/CreateDate/CreateData";
 import MainPage from "./components/MainPage/MainPage";
+import { getAllByPlaceholderText } from "@testing-library/react";
 
 class App extends Component {
   state = {
@@ -21,6 +22,12 @@ class App extends Component {
     });
   };
 
+  getdates = () => {
+    this.setState({
+      date: new Date(),
+    })
+    
+  }
   render() {
     return (
       <div className="App">
@@ -30,6 +37,12 @@ class App extends Component {
           </header>
         </Link>
         <MainPage />
+        <Route exact path="/ongoing" render={props =>
+          <Ongoing />
+        }/>
+        <Route exact path="/create" render={props =>
+          <CreateData />
+        }/>
         <footer className="component">Gatheria © </footer>
       </div>
     );
