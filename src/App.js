@@ -9,7 +9,6 @@ import logo from "./logo.png";
 import Ongoing from "./components/Ongoing/Ongoing";
 import CreateData from "./components/CreateDate/CreateData";
 import MainPage from "./components/MainPage/MainPage";
-import { getAllByPlaceholderText } from "@testing-library/react";
 
 class App extends Component {
   state = {
@@ -25,9 +24,8 @@ class App extends Component {
   getdates = () => {
     this.setState({
       date: new Date(),
-    })
-    
-  }
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -36,13 +34,9 @@ class App extends Component {
             <img src={logo} alt="Logo" />
           </header>
         </Link>
-        <MainPage />
-        <Route exact path="/ongoing" render={props =>
-          <Ongoing />
-        }/>
-        <Route exact path="/create" render={props =>
-          <CreateData />
-        }/>
+        <Route exact path="/" render={(props) => <MainPage />} />
+        <Route exact path="/ongoing" render={(props) => <Ongoing />} />
+        <Route exact path="/create" render={(props) => <CreateData />} />
         <footer className="component">Gatheria © </footer>
       </div>
     );
@@ -51,10 +45,8 @@ class App extends Component {
 
 export default App;
 
-
-
-
-{/* <div className="navigation">
+{
+  /* <div className="navigation">
 <Link path="/ongoing">
   <div className="nav">
     <h3>Ongoing Plans</h3>
@@ -72,4 +64,5 @@ export default App;
     </div>
   </Link>
 </div>
-</div> */}
+</div> */
+}

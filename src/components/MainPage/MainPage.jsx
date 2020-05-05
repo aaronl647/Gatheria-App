@@ -1,7 +1,7 @@
 import React from "react";
 import "./MainPage.css";
-import { Link, Route } from "react-router-dom";
-import CreateData from "../CreateDate/CreateData";
+import { Link, } from "react-router-dom";
+// import CreateData from "../CreateDate/CreateData";
 // import Ongoing from "./Ongoing/Ongoing";
 
 const MainPage = (props) => {
