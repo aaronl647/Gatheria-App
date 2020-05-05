@@ -1,0 +1,9 @@
+.navigation{
+    display: flex;
+    
+}
+
+.content{
+    display: flex;
+    flex-wrap: nowrap;
+}

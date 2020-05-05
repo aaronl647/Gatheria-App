@@ -1,15 +1,37 @@
 import React, { Component } from "react";
+import { Link, Switch } from "react-router-dom";
+
 import "./App.css";
+import logo from "./logo.png";
+// import MainPage from "./components/MainPage/MainPage";
+// import Details from "./components/Details/Details";
+// import CreateDate from "./components/CreateDate/CreateData";
+// import Ongoing from "./components/Ongoing/Ongoing";
+// import CreateData from "./components/CreateDate/CreateData";
 import MainPage from "./components/MainPage/MainPage";
 
 class App extends Component {
+  state = {
+    on: false,
+  };
+
+  toggle = () => {
+    this.setState({
+      on: !this.state.on,
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">Gatheria</header>
+        <Link to="/">
+          <header className="App-header">
+            <img src={logo} alt="Logo" />
+          </header>
+        </Link>
         <MainPage />
         <footer className="component">Gatheria © </footer>
-        </div>
+      </div>
     );
   }
 }
@@ -18,15 +40,23 @@ export default App;
 
 
 
-// <div className="App">
-//         <header className="App-header">Gatheria</header>
-//         <div className="navigation">
-//           <div className="nav">
-//             <h4>Hello</h4>
-//           </div>
-//           <div className="nav">
-//             <h4>Hello Again</h4>
-//           </div>
-//         </div>
-//         <footer className="component">Gatheria © </footer>
-//       </div>
+
+{/* <div className="navigation">
+<Link path="/ongoing">
+  <div className="nav">
+    <h3>Ongoing Plans</h3>
+  </div>
+</Link>
+<div>
+  {this.state.on && (
+    <CreateData />
+  )}
+  <Link path="/create" render={() =>(
+
+  )}>
+    <div className="nav">
+      <h3>Create a New Plan</h3>
+    </div>
+  </Link>
+</div>
+</div> */}

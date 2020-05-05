@@ -1,0 +1,19 @@
+.overview{
+    text-align: left;
+    border: 1px solid #478eeb;
+    margin: 10px;
+
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+    border: 1px solid #478eeb;
+    width: 1190px;
+    height: 70px;
+    border-radius: 30px;
+}
