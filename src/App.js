@@ -5,7 +5,6 @@ import "./App.css";
 import logo from "./logo.png";
 // import MainPage from "./components/MainPage/MainPage";
 // import Details from "./components/Details/Details";
-// import CreateDate from "./components/CreateDate/CreateData";
 import Ongoing from "./components/Ongoing/Ongoing";
 import CreateData from "./components/CreateDate/CreateData";
 import MainPage from "./components/MainPage/MainPage";
@@ -21,19 +20,14 @@ class App extends Component {
     });
   };
 
-  getdates = () => {
-    this.setState({
-      date: new Date(),
-    });
-  };
   render() {
     return (
       <div className="App">
-        <Link to="/">
-          <header className="App-header">
+        <header className="App-header">
+          <Link to="/">
             <img src={logo} alt="Logo" />
-          </header>
-        </Link>
+          </Link>
+        </header>
         <Route exact path="/" render={(props) => <MainPage />} />
         <Route exact path="/ongoing" render={(props) => <Ongoing />} />
         <Route exact path="/create" render={(props) => <CreateData />} />
@@ -45,7 +39,6 @@ class App extends Component {
 
 export default App;
 
-{
   /* <div className="navigation">
 <Link path="/ongoing">
   <div className="nav">
@@ -65,4 +58,17 @@ export default App;
   </Link>
 </div>
 </div> */
-}
+
+
+
+
+// componentDidMount() {
+//   this.callBackendAPI()
+//     .then((res) => this.setState({ data: res.express }))
+//     .catch((err) => console.log(err));
+// }
+
+// callBackendAPI = async() => {
+//   const response = await fetch('/express_backend');
+//   const body= await response.json
+// }
