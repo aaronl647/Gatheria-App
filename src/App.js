@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
-
+import userService from './utils/userService';
 import "./App.css";
 import logo from "./logo.png";
 import Ongoing from "./components/Ongoing/Ongoing";
@@ -8,8 +8,21 @@ import CreateData from "./components/CreateDate/CreateData";
 import MainPage from "./components/MainPage/MainPage";
 import Activities from "./components/Activities/Activities";
 import NavBar from "./components/NavBar/NavBar";
+import LoginPage from "./components/LoginPage/LoginPage"
+import SignupPage from "./components/SignupPage/SignupPage";
 
 class App extends Component {
+  constructor() { 
+    super()
+    this.state={
+      user: userService.getUser()
+    }
+  }
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
 
   render() {
     return (
@@ -18,14 +31,17 @@ class App extends Component {
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
-          <NavBar />
+          
         </header>
+        <NavBar />
+        <Route exact path="/login" render={(props) => <LoginPage />}/>
+        <Route exact path="/signup" render={(props) => <SignupPage />}/>
         <Route exact path="/" render={(props) => <MainPage />} />
         <Route exact path="/ongoing" render={(props) => <Ongoing />} />
         <Route exact path="/create" render={(props) => <CreateData />} />
         <Route exact path="/create/activity" render={(props) => <Activities />} />
 
-        <footer className="component">Gatheria © </footer>
+        <footer className="footer">Gatheria © </footer>
       </div>
     );
   }
@@ -33,36 +49,3 @@ class App extends Component {
 
 export default App;
 
-  /* <div className="navigation">
-<Link path="/ongoing">
-  <div className="nav">
-    <h3>Ongoing Plans</h3>
-  </div>
-</Link>
-<div>
-  {this.state.on && (
-    <CreateData />
-  )}
-  <Link path="/create" render={() =>(
-
-  )}>
-    <div className="nav">
-      <h3>Create a New Plan</h3>
-    </div>
-  </Link>
-</div>
-</div> */
-
-
-
-
-// componentDidMount() {
-//   this.callBackendAPI()
-//     .then((res) => this.setState({ data: res.express }))
-//     .catch((err) => console.log(err));
-// }
-
-// callBackendAPI = async() => {
-//   const response = await fetch('/express_backend');
-//   const body= await response.json
-// }

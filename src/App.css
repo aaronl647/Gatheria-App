@@ -42,6 +42,11 @@ img{
   border-radius: 30px;
 }
 
+
+.footer{
+  display: flex;
+  flex-direction: column-reverse;
+}
 /* 
 #478eeb
 #47eba4 

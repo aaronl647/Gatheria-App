@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 // import './CreateData.css'
 import Calendar from "react-calendar";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
 import TimePicker from "react-dropdown-timepicker";
-
-import Activities from "../Activities/Activities";
 
 const CreateData = (props) => {
   let [date, setDate] = useState(new Date());
