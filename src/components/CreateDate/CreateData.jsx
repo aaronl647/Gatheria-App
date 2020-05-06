@@ -2,38 +2,40 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import { Link } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
-import TimePicker from 'react-dropdown-timepicker'
+import TimePicker from "react-dropdown-timepicker";
+import './CreateData.css'
 
 const CreateData = (props) => {
-let [date, setDate] = useState(new Date())
+  let [date, setDate] = useState(new Date());
   return (
     <div className="Create">
-         <h3>Select Your Availablity</h3>
+
       <div className="datetime">
-        <Calendar
-        onChange={date => setDate(date)}
-        />
+      <h3>Select Your Availablity</h3>
+        <Calendar onChange={(date) => setDate(date)} />
         <h3>Select Earliest and Latest Available Times</h3>
-        <div className="time">
-          <tr>
-            <th>{date.toLocaleString()}</th>
-          </tr>
-          <tr>
-            <td>
-              <TimePicker/></td>
-          </tr>
-          <tr>
-          <td><TimePicker/></td>
-          </tr>
+      <div className="time">
+        <tr>
+          <th>{date.toLocaleString()}</th>
+        </tr>
+        <tr>
+          <td>
+            <TimePicker />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <TimePicker />
+          </td>
+        </tr>
       </div>
-      <div className="datetime">
-        
-        </div>
       </div>
       <Link className="Create-cancel" to="/">
-        Cancel
+        <div className="button">Cancel</div>
       </Link>
-      <Link to="/create/activity">Next</Link>
+      <Link to="/create/activity">
+        <div className="button">Next</div>
+      </Link>
     </div>
   );
 };

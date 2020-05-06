@@ -1,3 +1,20 @@
 .Create{
 display: flex;
+flex-wrap: nowrap;
+}
+
+.time{
+    display: flex;
+    margin: 5px;
+}
+.time tr{
+    margin: 5px;
+}
+
+.button{
+    margin: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    border: 1px solid black ;
+
 }
