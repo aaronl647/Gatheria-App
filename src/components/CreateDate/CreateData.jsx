@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import { Link } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
+import TimePicker from 'react-dropdown-timepicker'
 
 const CreateData = (props) => {
 let [date, setDate] = useState(new Date())
@@ -18,10 +19,11 @@ let [date, setDate] = useState(new Date())
             <th>{date.toLocaleString()}</th>
           </tr>
           <tr>
-            <td>hello</td>
+            <td>
+              <TimePicker/></td>
           </tr>
           <tr>
-          <td>Hello again</td>
+          <td><TimePicker/></td>
           </tr>
       </div>
       <div className="datetime">
