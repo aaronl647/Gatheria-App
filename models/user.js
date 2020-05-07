@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const SALT_ROUND = 6;
 
 
+
 const UserSchema = new Schema({
     name: {type: String, required: true},
     email: {type: String, required: true, lowercase: true, unique: true},
@@ -14,6 +15,10 @@ const UserSchema = new Schema({
 },{
     timestamps: true
 });
+
+UserSchema.methods.comparePassword = function(tryPassword, cb) {
+    bcrpyt.compare(tryPassword, this.password, cb);
+};
 
 // UserSchema.set('toJSON', {
 //     transform: function(doc, ret){

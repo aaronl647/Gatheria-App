@@ -4,7 +4,8 @@ var router = express.Router();
 var userCtrl = require('../../controllers/user');
 
 router.get('/', userCtrl.index) // home page 
-router.post('/', userCtrl.newUser) // Create a new user 
+router.post('/signup', userCtrl.signup) // Create a new user 
+router.post('/login', userCtrl.login) //User login
 router.get('/:id', userCtrl.showUser) // Show a user 
 router.put('/edit/:id', userCtrl.editUser) // Update user  
 router.put('/plan/edit/:id', userCtrl.editSchedule) // Edit ongoing plans 
