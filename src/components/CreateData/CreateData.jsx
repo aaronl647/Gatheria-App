@@ -1,82 +1,92 @@
-import React, { useState } from "react";
-// import './CreateData.css'
+import React, { Component } from "react";
+//import './CreateData.css'
 import Calendar from "react-calendar";
 import { Link } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
 import TimePicker from "react-dropdown-timepicker";
 
-const CreateData = (props) => {
-  let [date, setDate] = useState(new Date());
-  return (
-    <div>
+class CreateData extends Component {
+  state = {
+    invalidForm: true,
+    formData: {
+      date: "",
+      earliestTime: "",
+      latesetTime: "",
+    },
+  };
+
+  formRef = React.createRef();
+
+  handleSubmit = (e) => {
+    console.log("hello");
+    e.preventDefault();
+    this.props.handleAddDate(this.state.formData);
+  };
+
+  handleChange = (e) => {
+    const formData = {
+      ...this.state.formData,
+    };
+    this.setState({
+      formData,
+    });
+  };
+
+  render() {
+    return (
       <div className="col-md-4 time ">
-        <h3>Select Your Availablity</h3>
-        <Calendar onChange={(date) => setDate(date)} />
+        <form
+          ref={this.formRef}
+          autoComplete="off"
+          onSubmit={this.handleSubmit}
+        >
+          <h3>Select Your Availablity</h3>
+          <Calendar
+            date="date"
+            value={this.state.formData.date}
+            onChange={this.handleChange}
+          />
+          <div className="time">
+            <div className="col-md-8">
+              <h3>Select Earliest and Latest Available Times</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td>{this.state.formData.date}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <td>
+                    <TimePicker
+                      earliestTime="earliestTime"
+                      value={this.state.formData.earliestTime}
+                      onChange={this.handleChange}
+                      required
+                    />
+                  </td>
+                </tbody>
+                <tbody>
+                  <td>
+                    <TimePicker
+                      latestTime="latestTime"
+                      value={this.state.formData.latestTime}
+                      onChange={this.handleChange}
+                    />
+                  </td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button type="submit" className="Create-next">
+            <div className="button">Next</div>
+          </button>
+        </form>
+        <Link className="Create-cancel" to="/">
+          <div className="button">Cancel</div>
+        </Link>
       </div>
-
-      <div className="time">
-        <div className="col-md-8">
-          <h3>Select Earliest and Latest Available Times</h3>
-          <table>
-            <tr>
-              <th>{date.toLocaleString()}</th>
-            </tr>
-            <tr>
-              <td>
-                <TimePicker />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <TimePicker />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <Link className="Create-cancel" to="/">
-        <div className="button">Cancel</div>
-      </Link>
-
-      <Link className="Create-next" to="/create/activity">
-        <div className="button">Next</div>
-      </Link>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default CreateData;
-
-// class CreateData extends React.Component {
-//   state = {
-//     value: [],
-//     selectedDate: new Date()
-//   };
-
-//   onClickDay = (date) => {
-//     this.setState({ selectedDate: date });
-//   }
-
-//   render() {
-//     return (
-//       <div className="Calendar">
-//         <h4>Choose Available Dates and Times</h4>
-//         <div className="data">
-//           <Calendar onClickDay={this.selectedDate}/>
-//         </div>
-//         <div className="data">{/* <p>{value}</p> */}</div>
-//         <Link className="Create-cancel" to="/">
-//           Cancel
-//         </Link>
-//         <Link to="/create/activity">Next</Link>
-//       </div>
-//     );
-//   }
-// }
-
-// export default CreateData;
-
-// <Link className="Create-next" to="/create/activity">
-//         <div className="button">Next</div>
-//       </Link>

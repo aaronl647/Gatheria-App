@@ -7,7 +7,6 @@ const app = express();
 var indexRouter = require('./routes/api/index');
 const userRouter = require('./routes/api/user');
 
-
 require('./config/database')
 
 app.use(logger("dev"));

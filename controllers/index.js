@@ -6,6 +6,8 @@ const SECRET = process.env.SECRET;
 module.exports = {
   signup,
   login,
+  newPlan,
+  newActivity
 };
 
 function createJWT(user) {
@@ -45,3 +47,32 @@ async function login(req, res) {
     return res.status(401).json(err);
   }
 }
+
+function newPlan(req, res){
+  console.log("hello")
+  Avail.create(req.body)
+  .then(sched => {
+      res.status(200).json(sched)
+  })
+  .catch(err => {
+      if(err) {
+          console.log('create error: ' + err);
+      }
+      res.sendStatus(500)
+  })
+}
+
+function newActivity(req, res){
+  console.log("hello")
+  Activity.create(req.body)
+  .then(activ => {
+      res.status(200).json(activ)
+  })
+  .catch(err => {
+      if(err) {
+          console.log('create error: ' + err);
+      }
+      res.sendStatus(500)
+  })
+}
+

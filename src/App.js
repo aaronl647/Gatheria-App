@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 import userService from "./utils/userService";
+import scheduleService from "./utils/scheduleService";
+
 import "./App.css";
 import logo from "./logo.png";
 import Ongoing from "./components/Ongoing/Ongoing";
@@ -16,6 +18,7 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(),
+      selDate: "",
     };
   }
 
@@ -31,6 +34,15 @@ class App extends Component {
   handleSignup = () => {
     this.setState({ user: userService.getUser() });
   };
+
+  handleAddDate = async (newDateData) => {
+    console.log('hello')
+    const newDate = await scheduleService.createDate(newDateData);
+    this.setState(
+      (state) => ({
+        selDate: {newDate},
+      }
+      {console.log(selDate)}))};
 
   render() {
     return (
@@ -63,7 +75,16 @@ class App extends Component {
         />
         <Route exact path="/" render={(props) => <MainPage />} />
         <Route exact path="/ongoing" render={(props) => <Ongoing />} />
-        <Route exact path="/create" render={(props) => <CreateData />} />
+        <Route
+          exact
+          path="/create"
+          render={(history) => (
+            <CreateData
+              history={history}
+              handleAddDate={this.handleAddDate}
+            />
+          )}
+        />
         <Route
           exact
           path="/create/activity"
