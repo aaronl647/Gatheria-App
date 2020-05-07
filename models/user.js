@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema;
 
-const SALT_ROUND = 6;
-
+const SALT_ROUNDS = 6;
 
 
 const UserSchema = new Schema({
@@ -17,15 +16,15 @@ const UserSchema = new Schema({
 });
 
 UserSchema.methods.comparePassword = function(tryPassword, cb) {
-    bcrpyt.compare(tryPassword, this.password, cb);
+    bcrypt.compare(tryPassword, this.password, cb);
 };
 
-// UserSchema.set('toJSON', {
-//     transform: function(doc, ret){
-//         delete ret.password
-//         return ret
-//     }
-// })
+UserSchema.set('toJSON', {
+    transform: function(doc, ret){
+        delete ret.password
+        return ret
+    }
+})
 
 UserSchema.pre('save', function(next) {
     const user = this;

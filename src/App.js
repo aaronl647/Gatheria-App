@@ -1,32 +1,36 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
-import userService from './utils/userService';
+import userService from "./utils/userService";
 import "./App.css";
 import logo from "./logo.png";
 import Ongoing from "./components/Ongoing/Ongoing";
-import CreateData from "./components/CreateDate/CreateData";
+import CreateData from "./components/CreateData/CreateData";
 import MainPage from "./components/MainPage/MainPage";
 import Activities from "./components/Activities/Activities";
 import NavBar from "./components/NavBar/NavBar";
-import LoginPage from "./components/LoginPage/LoginPage"
+import LoginPage from "./components/LoginPage/LoginPage";
 import SignupPage from "./components/SignupPage/SignupPage";
 
 class App extends Component {
-  constructor() { 
-    super()
-    this.state={
-      user: userService.getUser()
-    }
+  constructor() {
+    super();
+    this.state = {
+      user: userService.getUser(),
+    };
   }
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: userService.getUser() });
+  };
 
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
-  }
+  };
 
   handleSignup = () => {
-    this.setState({user: userService.getUser()});
-  }
+    this.setState({ user: userService.getUser() });
+  };
 
   render() {
     return (
@@ -35,15 +39,36 @@ class App extends Component {
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
-          
         </header>
         <NavBar />
-        <Route exact path="/login" render={(props) => <LoginPage />}/>
-        <Route exact path="/signup" render={(props) => <SignupPage />}/>
+        <Route
+          exact
+          path="/login"
+          render={({ history }) => (
+            <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/signup"
+          render={({ history }) => (
+            <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          )}
+        />
         <Route exact path="/" render={(props) => <MainPage />} />
         <Route exact path="/ongoing" render={(props) => <Ongoing />} />
         <Route exact path="/create" render={(props) => <CreateData />} />
-        <Route exact path="/create/activity" render={(props) => <Activities />} />
+        <Route
+          exact
+          path="/create/activity"
+          render={(props) => <Activities />}
+        />
 
         <footer className="footer">Gatheria © </footer>
       </div>
@@ -52,4 +77,3 @@ class App extends Component {
 }
 
 export default App;
-

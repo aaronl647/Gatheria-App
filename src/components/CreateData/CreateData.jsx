@@ -14,21 +14,25 @@ const CreateData = (props) => {
         <Calendar onChange={(date) => setDate(date)} />
       </div>
 
-      <div className="col-md-8 time ">
-      <h3>Select Earliest and Latest Available Times</h3>
-        <tr>
-          <th>{date.toLocaleString()}</th>
-        </tr>
-        <tr>
-          <td>
-            <TimePicker />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <TimePicker />
-          </td>
-        </tr>
+      <div className="time">
+        <div className="col-md-8">
+          <h3>Select Earliest and Latest Available Times</h3>
+          <table>
+            <tr>
+              <th>{date.toLocaleString()}</th>
+            </tr>
+            <tr>
+              <td>
+                <TimePicker />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <TimePicker />
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
 
       <Link className="Create-cancel" to="/">
