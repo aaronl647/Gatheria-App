@@ -20,4 +20,4 @@ These include:
 4.  Able to see a details page for each plan created.
 5.  Integration between Google Calendar and Gatheria 
 
-#### Try Gatheria right now here! ==> [Gatheria]()
+#### Try Gatheria right now here! ==> [Gatheria](https://gatheria-app.herokuapp.com/)
