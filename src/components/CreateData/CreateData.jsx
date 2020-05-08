@@ -3,6 +3,7 @@ import "./CreateData.css";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import TimePicker from "react-dropdown-timepicker";
+import { Link } from 'react-router-dom'
 
 class CreateData extends Component {
   state = {
@@ -15,6 +16,7 @@ class CreateData extends Component {
   };
 
   formRef = React.createRef();
+
 
   handleSubmit = (e) => {
     console.log("hello");
@@ -51,38 +53,39 @@ class CreateData extends Component {
           <div className="time">
             <h3>Select Earliest and Latest Available Times</h3>
             <table>
-              <thead>
-                <tr>
-                  <td>{this.state.formData.date}</td>
-                </tr>
-              </thead>
-              <tbody>
-                <td>
-                  <TimePicker
-                    earliestTime="earliestTime"
-                    value={this.state.formData.earliestTime}
-                    onChange={this.handleChange}
-                    required
-                  />
-                </td>
-              </tbody>
-              <tbody>
-                <td>
-                  <TimePicker
-                    latestTime="latestTime"
-                    value={this.state.formData.latestTime}
-                    onChange={this.handleChange}
-                  />
-                </td>
-              </tbody>
+              <tr>
+                <th>{this.state.formData.date}</th>
+              </tr>
+              <td>
+                <TimePicker
+                  earliestTime="earliestTime"
+                  value={this.state.formData.earliestTime}
+                  onChange={this.handleChange}
+                  required
+                />
+              </td>
+              <td>
+                <TimePicker
+                  latestTime="latestTime"
+                  value={this.state.formData.latestTime}
+                  onChange={this.handleChange}
+                />
+              </td>
             </table>
           </div>
           <div className="buttons">
             <button className="Create-cancel">
+              <Link to="/home">
               <div className="button">Cancel</div>
+              </Link>
             </button>
-            <button type="submit" className="Create-next">
+            <button
+              type="submit"
+              className="Create-next"
+            >
+              <Link to="/create/activity">
               <div className="button">Next</div>
+              </Link>
             </button>
           </div>
         </form>

@@ -12,6 +12,8 @@ import Activities from "./components/Activities/Activities";
 import NavBar from "./components/NavBar/NavBar";
 import LoginPage from "./components/LoginPage/LoginPage";
 import SignupPage from "./components/SignupPage/SignupPage";
+import LandingPage from "./components/LandingPage/LandingPage";
+import URLPage from "./components/URLPage/URLPage";
 
 class App extends Component {
   constructor() {
@@ -35,12 +37,10 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   };
 
-  handleAddDate = async (newDateData) => {
-    const newDate = await scheduleService.createDate(newDateData);
-    this.setState(state => ({selDate: [...state.selDate, newDate]
-      }),
-      () => this.props.history.push('/create')
-      )};
+  // handleAddDate = async newDateData => {
+  //   const newDate = await scheduleService.createDate(newDateData);
+  //   this.setState()
+  // }
 
   render() {
     return (
@@ -50,8 +50,7 @@ class App extends Component {
             <img src={logo} alt="Logo" />
           </Link>
         </header>
-        <NavBar 
-        handleLogout={this.handleLogout}/>
+        <NavBar handleLogout={this.handleLogout} />
         <Route
           exact
           path="/login"
@@ -72,16 +71,14 @@ class App extends Component {
             />
           )}
         />
-        <Route exact path="/" render={(props) => <MainPage />} />
+        <Route exact path="/" render={(props) => <LandingPage />} />
+        <Route exact path="/home" render={(props) => <MainPage />} />
         <Route exact path="/ongoing" render={(props) => <Ongoing />} />
         <Route
           exact
           path="/create"
           render={(history) => (
-            <CreateData
-              history={history}
-              handleAddDate={this.handleAddDate}
-            />
+            <CreateData history={history} handleAddDate={this.handleAddDate} />
           )}
         />
         <Route
@@ -89,6 +86,7 @@ class App extends Component {
           path="/create/activity"
           render={(props) => <Activities />}
         />
+        <Route exact path="/create/complete" render={(props) => <URLPage />} />
 
         <footer className="footer">Gatheria © </footer>
       </div>
