@@ -1,6 +1,6 @@
-#Welcome to Gatheria
+# Welcome to Gatheria
 
-###What is Gatheria?
+### What is Gatheria?
 
 Have you ever tried to plan an activity with a group of people, only to find out that everyone has conflicting schedules? Then after talking about the idea of meeting up, you and your group of friends never actually end up making any plans, and the idea gets pushed back to another several weeks or even months.
 
@@ -10,7 +10,7 @@ Your friends will then be able to vote on which days would work best for them, a
 
 Going into the *View Ongoing Plans* button will allow you to see an overview of all the plans you have already made.  Then by clicking on any of the plans you’ll be able to see the details of the plan that you’ve clicked on.  On this page you’ll be able to see who has voted and what they’ve voted for as well.  
 
-###Stretch Goals
+### Stretch Goals
 This app is a work in progress! 
 There are several milestones that I would like to see in the near future. 
 These include: 
@@ -20,4 +20,4 @@ These include:
 4.  Able to see a details page for each plan created.
 5.  Integration between Google Calendar and Gatheria 
 
-
+#### Try Gatheria right now here! ==> [Gatheria]()
