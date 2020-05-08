@@ -11,8 +11,8 @@ Your friends will then be able to vote on which days would work best for them, a
 Going into the *View Ongoing Plans* button will allow you to see an overview of all the plans you have already made.  Then by clicking on any of the plans you’ll be able to see the details of the plan that you’ve clicked on.  On this page you’ll be able to see who has voted and what they’ve voted for as well.  
 
 ### Stretch Goals
-This app is a work in progress! 
-There are several milestones that I would like to see in the near future. 
+This app is a work in progress!   
+There are several milestones that I would like to see in the near future.  
 These include: 
 1.  Have the Activities page working
 2.  Able to generate a unique URL so friends can vote
