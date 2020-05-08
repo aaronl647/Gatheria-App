@@ -1,18 +1,19 @@
-.container{
-display: flex;
-flex-wrap: nowrap;
+.container {
+  display: flex;
+}
+.calendar {
+  width: 350px;
+  float: left;
+}
+.time {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin: 50px;
 }
 
-.time{
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 5px;
-}
-
-.button{
-    margin: 5px;
-    display: flex;
-    flex-direction: column-reverse;
-    border: 1px solid black ;
-
+.button {
+  margin: 5px;
+  display: flex;
+  flex-direction: column-reverse;
 }

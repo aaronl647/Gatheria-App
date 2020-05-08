@@ -1,68 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Welcome to Gatheria
 
-## Available Scripts
+###What is Gatheria?
 
-In the project directory, you can run:
+Have you ever tried to plan an activity with a group of people, only to find out that everyone has conflicting schedules? Then after talking about the idea of meeting up, you and your group of friends never actually end up making any plans, and the idea gets pushed back to another several weeks or even months.
 
-### `npm start`
+This is where Gatheria comes in!  Gatheria helps simplify all the scheduling between groups of friends.  You start by logging into the app and you’ll be greeted with 2 main buttons. Clicking on *Create a New Plan* will allow you to choose all the dates you have available to you.  After choosing your dates, you will then choose the earliest time followed by the latest time you can meet up.  Clicking **Next** will then bring you to the *Suggest Activities* page where you can enter 3 potential activities you’d like to do with your group.  Once you press the **Submit** button.  A shortened URL will be generated, and you’ll then be able to share this link to all the people you want to meet up with.  
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Your friends will then be able to vote on which days would work best for them, and they’ll also be able to vote on which activities they would like to do, or they could also suggest another activity.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Going into the *View Ongoing Plans* button will allow you to see an overview of all the plans you have already made.  Then by clicking on any of the plans you’ll be able to see the details of the plan that you’ve clicked on.  On this page you’ll be able to see who has voted and what they’ve voted for as well.  
 
-### `npm test`
+###Stretch Goals
+This app is a work in progress! 
+There are several milestones that I would like to see in the near future. 
+These include: 
+1.  Have the Activities page working
+2.  Able to generate a unique URL so friends can vote
+3.  Able to see an Overview of plans 
+4.  Able to see a details page for each plan created.
+5.  Integration between Google Calendar and Gatheria 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

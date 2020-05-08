@@ -7,6 +7,16 @@ export default class Activities extends Component {
       activity: []
     }
   }
+  formRef = React.createRef();
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.handleAddActivity(this.state.formData);
+  };
+
+  handleChange = e => {
+    const formData = {...this.state.formData}
+  }
   render() {
     return (
       <div>

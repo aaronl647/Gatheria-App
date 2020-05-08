@@ -36,13 +36,11 @@ class App extends Component {
   };
 
   handleAddDate = async (newDateData) => {
-    console.log('hello')
     const newDate = await scheduleService.createDate(newDateData);
-    this.setState(
-      (state) => ({
-        selDate: {newDate},
-      }
-      {console.log(selDate)}))};
+    this.setState(state => ({selDate: [...state.selDate, newDate]
+      }),
+      () => this.props.history.push('/create')
+      )};
 
   render() {
     return (
@@ -52,7 +50,8 @@ class App extends Component {
             <img src={logo} alt="Logo" />
           </Link>
         </header>
-        <NavBar />
+        <NavBar 
+        handleLogout={this.handleLogout}/>
         <Route
           exact
           path="/login"
