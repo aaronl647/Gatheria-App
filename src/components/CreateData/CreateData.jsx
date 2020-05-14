@@ -54,7 +54,7 @@ class CreateData extends Component {
             <h3>Select Earliest and Latest Available Times</h3>
             <table>
               <tr>
-                <th>{this.state.formData.date}</th>
+                <th>{this.state.date}</th>
               </tr>
               <td>
                 <TimePicker

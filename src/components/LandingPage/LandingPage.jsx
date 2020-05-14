@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import './LandingPage.css'
 import photo from "./image-landing-page.jpg"
+
+
 export default class LandingPage extends Component {
     render() {
         return (
             <div>
+
                 <h1>Gatheria</h1>
                 <div className="paragraph">
                     <h3>What is Gatheria?</h3>
